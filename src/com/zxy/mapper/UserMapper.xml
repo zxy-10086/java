@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--命名空间是实现的接口 -->
+<mapper namespace="com.zxy.dao.UserDao">
+
+	<select id="dologin" parameterType="User" resultType="Integer">
+		select * from user where userName=#{userName} and passWord=#{passWord}
+	</select>
+	<!-- 添加 -->
+	<insert id="addUser" parameterType="User">
+		insert into user
+		values(null,#{userName},#{passWord})
+	</insert>
+
+
+</mapper>  
